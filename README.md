@@ -28,13 +28,18 @@ This project is a Team Project Management System built using the Laravel PHP fra
         * *Tester:* Can add comments on tasks.
 * *User Authentication:*
     * *Secure Login:* Utilizes JWT for secure user authentication.
+* User Management:
+    * Create new users
+    * View list of users
+    * Update user information 
+    * Delete a user 
 
 ## Getting Started
 
 1. *Clone the repository:*
     
 bash
-    git clone https://github.com/your-username/team-project-manager.git
+    git clone https://github.com/Hanen191010/Team-Project-Management-System.git
     cd team-project-manager
     
 2. *Install dependencies:*
@@ -46,7 +51,7 @@ bash
     
 bash
     php artisan migrate
-    
+    php artisan db:seed
 4. *Generate JWT secret:*
     
 bash

@@ -18,15 +18,23 @@ use App\Http\Controllers\UserController;
 |
 */
 
-
+// Authentication Routes
 Route::controller(AuthController::class)->group(function () {
+    // Route for user login
     Route::post('login', 'login');
+    // Route for user logout
     Route::post('logout', 'logout');
 });
+
+// Protected Routes (Requires Authentication and Verification)
 Route::middleware(['auth:api', 'verified'])->group(function () {
+    // Define routes for ProjectController
     Route::resource('projects', ProjectController::class);
+
+    // Define routes for TaskController
     Route::resource('tasks', TaskController::class);
 
-    // مسارات API للمستخدمين
-    Route::apiResource('users', UserController::class); // مسارات API للمستخدمين (index, store, show, update, destroy)
+    // Define routes for UserController (using API resource)
+    // This includes routes for index, store, show, update, and destroy actions
+    Route::apiResource('users', UserController::class); 
 });

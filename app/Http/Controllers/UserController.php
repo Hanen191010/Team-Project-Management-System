@@ -7,48 +7,51 @@ use App\Services\UserService;
 use App\Models\User;
 
 class UserController extends Controller
-{   
-    protected $UserService; 
+{
+    protected $UserService;
 
     // Dependency Injection of UserService
     public function __construct(UserService $UserService)
     {
-        $this->UserService = $UserService; 
+        $this->UserService = $UserService;
     }
-        /*
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // الحصول على جميع المستخدمين من قاعدة البيانات وإرجاعهم كاستجابة JSON
+        // Retrieve all users from the database and return them as a JSON response
         return response()->json(User::all());
     }
 
-    /*
+    /**
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
-        // التحقق من صحة البيانات الواردة في الطلب
+    {
+        // Validate the incoming request data
         $request->validate([
-            'name' => 'required|string', // الاسم مطلوب ونوعه نصي
-            'email' => 'required|string|email|unique:users', // البريد الإلكتروني مطلوب ونوعه نصي وصحيح و فريد
-            'password' => 'required|string', // كلمة المرور مطلوبة ونوعها نصي
-            'role' => 'required|in:developer,tester',
-            'project_id'=>'required|exists:projects,id'
+            'name' => 'required|string', // Name is required and must be a string
+            'email' => 'required|string|email|unique:users', // Email is required, must be a string, a valid email format, and unique
+            'password' => 'required|string', // Password is required and must be a string
+            'role' => 'required|in:developer,tester', // Role is required and must be either 'developer' or 'tester'
+            'project_id' => 'required|exists:projects,id' // Project ID is required and must exist in the projects table
         ]);
 
-        $user=$this->UserService->createUser($request->all());
-        // إرجاع المستخدم الجديد كاستجابة JSON مع رمز 201 (تم إنشاء المورد بنجاح)
+        // Create a new user using the validated data and the UserService
+        $user = $this->UserService->createUser($request->all());
+
+        // Return the newly created user as a JSON response with a 201 Created status code
         return response()->json($user, 201);
     }
 
-    /*
+    /**
      * Display the specified resource.
      *
      * @param int $id
@@ -56,14 +59,14 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        // الحصول على المستخدم المطلوب من قاعدة البيانات باستخدام ID
+        // Retrieve the requested user from the database using the ID
         $user = User::findOrFail($id);
 
-        // إرجاع المستخدم كاستجابة JSON
+        // Return the user as a JSON response
         return response()->json($user);
     }
 
-    /*
+    /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
@@ -72,23 +75,24 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user)
     {
-        // الحصول على المستخدم المطلوب من قاعدة البيانات باستخدام ID
+        // Retrieve the requested user from the database using the ID
         $user = User::findOrFail($user->id);
-        // التحقق من صحة البيانات الواردة في الطلب
+
+        // Validate the incoming request data
         $request->validate([
-            'name' => 'nullable|string', // الاسم مطلوب ونوعه نصي
-            'email' => 'nullable|string|email|unique:users', // البريد الإلكتروني مطلوب ونوعه نصي وصحيح و فريد
-            'password' => 'nullable|string', // كلمة المرور مطلوبة ونوعها نصي
+            'name' => 'nullable|string', // Name is optional and must be a string
+            'email' => 'nullable|string|email|unique:users', // Email is optional, must be a string, a valid email format, and unique
+            'password' => 'nullable|string', // Password is optional and must be a string
         ]);
 
-        // إنشاء مستخدم جديد باستخدام البيانات المصادقة
-        $updated_User = $this->UserService->updateUser($user, $request->all());
-        
-        return response()->json($updated_User, 201);
-        
+        // Update the existing user using the validated data and the UserService
+        $updatedUser = $this->UserService->updateUser($user, $request->all());
+
+        // Return the updated user as a JSON response with a 201 Created status code
+        return response()->json($updatedUser, 201);
     }
 
-    /*
+    /**
      * Remove the specified resource from storage.
      *
      * @param int $id
@@ -96,11 +100,10 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        // حذف المستخدم من قاعدة البيانات باستخدام ID
-        $User = $this->UserService->deleteUser($user);
+        // Delete the user from the database using the UserService
+        $user = $this->UserService->deleteUser($user);
 
-        // إرجاع استجابة JSON فارغة مع رمز 204 (لا يوجد محتوى)
+        // Return an empty JSON response with a 204 No Content status code, indicating successful deletion
         return response()->json(null, 204);
     }
-
 }

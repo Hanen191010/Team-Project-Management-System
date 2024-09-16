@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use App\Models\User; 
-use Illuminate\Http\Request; 
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,42 +13,49 @@ class UserService
      * Create a new user.
      *
      * @param array $data The data for the new user.
-     * @return \Illuminate\Http\JsonResponse The response with user details and token.
+     * @return User The newly created user object.
      */
     public function createUser(array $data)
     {
+        // Create the user using the provided data, hashing the password
         $user = User::create([
-        'name' => $data['name'],
-        'email' => $data['email'],
-        'password' => bcrypt($data['password']), // تشفير كلمة المرور
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']), // Use Hash::make() for password hashing
         ]);
-    $user->projects()->attach($user['id'], ['role' => $data['role']],['project_id' => $data['project_id']]);
-    // إرجاع المستخدم الجديد كاستجابة JSON مع رمز 201 (تم إنشاء المورد بنجاح)
-    return $user;
-    
+
+        // Attach the user to the project with their role
+        $user->projects()->attach($data['project_id'], ['role' => $data['role']]);
+
+        // Return the newly created user object
+        return $user;
     }
 
     /*
      * Update an existing user.
      *
-     * @param User $User The user object to update.
+     * @param User $user The user object to update.
      * @param array $data The data to update the user with.
      * @return User The updated user object.
      */
-    public function updateUser(User $User, array $data)
+    public function updateUser(User $user, array $data)
     {
-        $User->update($data); 
-        return $User; 
+        // Update the user with the provided data
+        $user->update($data);
+
+        // Return the updated user object
+        return $user;
     }
 
     /*
      * Delete a user.
      *
-     * @param User $User The user object to delete.
+     * @param User $user The user object to delete.
      * @return void
      */
-    public function deleteUser(User $User)
+    public function deleteUser(User $user)
     {
-        $User->delete(); 
+        // Delete the user from the database
+        $user->delete();
     }
 }

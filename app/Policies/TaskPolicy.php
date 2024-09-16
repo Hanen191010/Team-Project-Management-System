@@ -39,8 +39,9 @@ class TaskPolicy
      * @param \App\Models\User $user
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(User $user) {
-        return $user->projectUsers()->where('role', 'manager')->exists();
+    public function create(User $user)
+    {
+        return true; 
     }
 
     /**

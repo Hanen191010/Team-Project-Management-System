@@ -3,29 +3,55 @@
 namespace App\Services;
 
 use Illuminate\Support\Facades\Auth;
-use App\Models\Project; 
-use Illuminate\Http\Request; 
-
+use App\Models\Project;
+use Illuminate\Http\Request;
 
 class ProjectService
 {
-    
+
+    /*
+     * Creates a new project and assigns the current user as the project manager.
+     *
+     * @param array $data The project data to create.
+     * @return Project The newly created project.
+     */
     public function createProject(array $data)
-    {   $project=Project::create($data);
-        $project->users()->attach(Auth::id(), ['role' => 'manager']); // تعيين المستخدم الحالي كمدير
-       return $project;
+    {
+        // Create the project using the provided data
+        $project = Project::create($data);
+
+        // Attach the current user as a manager to the project
+        $project->users()->attach(Auth::id(), ['role' => 'manager']);
+
+        // Return the created project
+        return $project;
     }
 
-   
-    public function updateProject(Project $Project, array $data)
+    /*
+     * Updates an existing project with new data.
+     *
+     * @param Project $project The project to update.
+     * @param array $data The new project data.
+     * @return Project The updated project.
+     */
+    public function updateProject(Project $project, array $data)
     {
-        $Project->update($data); 
-        return $Project; 
+        // Update the project with the provided data
+        $project->update($data);
+
+        // Return the updated project
+        return $project;
     }
 
-  
-    public function deleteProject(Project $Project)
+    /*
+     * Deletes a project from the database.
+     *
+     * @param Project $project The project to delete.
+     * @return void
+     */
+    public function deleteProject(Project $project)
     {
-        $Project->delete(); 
+        // Delete the project from the database
+        $project->delete();
     }
 }
