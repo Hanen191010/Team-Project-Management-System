@@ -1,0 +1,2146 @@
+{
+	"info": {
+		"_postman_id": "c8297e0f-66b2-4867-a5fd-70e9a6b7f1c4",
+		"name": "Team Project Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32073784"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://127.0.0.1:8000/api/login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 11:55:16 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 11:55:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"admin\",\n        \"email\": \"admin@gmail.com\",\n        \"email_verified_at\": null,\n        \"password\": \"$2y$10$XEZDVf/jg7frhpgfKh8zHeSN86lsDN0Q7iOw4L9oW/turp3gbMlzi\",\n        \"remember_token\": null,\n        \"created_at\": \"2024-09-15T17:34:01.000000Z\",\n        \"updated_at\": \"2024-09-15T17:34:01.000000Z\"\n    },\n    \"authorisation\": {\n        \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDg3NzE2LCJleHAiOjE3MjY0OTEzMTYsIm5iZiI6MTcyNjQ4NzcxNiwianRpIjoiZmlBb0N1MWZtWjZuM21lRyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5jt-H6Hc-eLR16SgLvtn3gpyMgS4tG4wlUul_BgNoZA\",\n        \"type\": \"bearer\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDM0Mzc2LCJleHAiOjE3MjY0Mzc5NzYsIm5iZiI6MTcyNjQzNDM3NiwianRpIjoiUmNIcHZHdFBVZlpIaEpocyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.EhSibAm1Kbi-_NflmHAZ-IzN9RRmCfe4i70iDgFQrN8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "logout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/logout",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 21:16:39 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 15 Sep 2024 21:16:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"success\",\n    \"message\": \"Successfully logged out\"\n}"
+				}
+			]
+		},
+		{
+			"name": "projects list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDIyNTE2LCJleHAiOjE3MjY0MjYxMTYsIm5iZiI6MTcyNjQyMjUxNiwianRpIjoiRmlkTFoxVVlQU3Uycnp4WSIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.F6-Pl8aU949nnHU5t0QkRHxMVenNGYqHVKQ2PYoqsJA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/projects",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "projects list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:52:18 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:52:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 2,\n        \"name\": \"test\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-15T20:12:08.000000Z\",\n        \"updated_at\": \"2024-09-15T20:12:08.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 2,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"name\": \"test\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-15T20:13:12.000000Z\",\n        \"updated_at\": \"2024-09-15T20:13:12.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 3,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"name\": \"test\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-15T20:15:18.000000Z\",\n        \"updated_at\": \"2024-09-15T20:15:18.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 4,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"name\": \"test\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-15T20:23:06.000000Z\",\n        \"updated_at\": \"2024-09-15T20:23:06.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 5,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"name\": \"test\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-15T20:24:02.000000Z\",\n        \"updated_at\": \"2024-09-15T20:24:02.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 6,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 8,\n        \"name\": \"test\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-15T21:01:30.000000Z\",\n        \"updated_at\": \"2024-09-15T21:01:30.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 8,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 9,\n        \"name\": \"test2\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-16T12:15:43.000000Z\",\n        \"updated_at\": \"2024-09-16T12:15:43.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 9,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 11,\n        \"name\": \"test3\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-16T12:50:03.000000Z\",\n        \"updated_at\": \"2024-09-16T12:50:03.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 11,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    },\n    {\n        \"id\": 12,\n        \"name\": \"test3\",\n        \"description\": \"this is a test\",\n        \"created_at\": \"2024-09-16T12:50:38.000000Z\",\n        \"updated_at\": \"2024-09-16T12:50:38.000000Z\",\n        \"pivot\": {\n            \"user_id\": 1,\n            \"project_id\": 12,\n            \"role\": \"manager\",\n            \"contribution_hours\": 0,\n            \"last_activity\": \"2024-09-14 17:01:33\"\n        }\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDg3NzE2LCJleHAiOjE3MjY0OTEzMTYsIm5iZiI6MTcyNjQ4NzcxNiwianRpIjoiZmlBb0N1MWZtWjZuM21lRyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5jt-H6Hc-eLR16SgLvtn3gpyMgS4tG4wlUul_BgNoZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test4\",\r\n    \"description\":\"this is a test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/projects",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create project",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test4\",\r\n    \"description\":\"this is a test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:53:38 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:53:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"test4\",\n    \"description\": \"this is a test\",\n    \"updated_at\": \"2024-09-16T12:53:38.000000Z\",\n    \"created_at\": \"2024-09-16T12:53:38.000000Z\",\n    \"id\": 13\n}"
+				}
+			]
+		},
+		{
+			"name": "view project",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDg3NzE2LCJleHAiOjE3MjY0OTEzMTYsIm5iZiI6MTcyNjQ4NzcxNiwianRpIjoiZmlBb0N1MWZtWjZuM21lRyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5jt-H6Hc-eLR16SgLvtn3gpyMgS4tG4wlUul_BgNoZA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test\",\r\n    \"description\":\"this is a test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/projects/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "view project",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test\",\r\n    \"description\":\"this is a test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"4"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:54:58 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:54:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"test\",\n    \"description\": \"this is a test\",\n    \"created_at\": \"2024-09-15T20:15:18.000000Z\",\n    \"updated_at\": \"2024-09-15T20:15:18.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test1\",\r\n    \"description\":\"this is a test!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/projects/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update project",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test1\",\r\n    \"description\":\"this is a test!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"3"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:59:23 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 12:59:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"test1\",\n    \"description\": \"this is a test!\",\n    \"created_at\": \"2024-09-15T20:13:12.000000Z\",\n    \"updated_at\": \"2024-09-16T12:59:23.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete project",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"test1\",\r\n    \"description\":\"this is a test!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/projects/8",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"projects",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete project",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"test1\",\r\n    \"description\":\"this is a test!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/projects/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"projects",
+								"8"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:01:10 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:01:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "tasks list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "tasks list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:04:02 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:04:02 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 4,\n        \"title\": \"altering\",\n        \"description\": \"you can alter\",\n        \"status\": \"جديد\",\n        \"priority\": \"عالي\",\n        \"due_date\": \"2024-10-10\",\n        \"project_id\": 2,\n        \"created_at\": \"2024-09-16T13:02:53.000000Z\",\n        \"updated_at\": \"2024-09-16T13:02:53.000000Z\",\n        \"laravel_through_key\": 1\n    },\n    {\n        \"id\": 5,\n        \"title\": \"cleaning\",\n        \"description\": \"you can clean\",\n        \"status\": \"جديد\",\n        \"priority\": \"عالي\",\n        \"due_date\": \"2024-10-10\",\n        \"project_id\": 2,\n        \"created_at\": \"2024-09-16T13:03:23.000000Z\",\n        \"updated_at\": \"2024-09-16T13:03:23.000000Z\",\n        \"laravel_through_key\": 1\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"cleaning\",\r\n    \"description\":\"you can clean \",\r\n    \"status\":\"جديد\",\r\n    \"priority\":\"عالي\",\r\n    \"due_date\":\"2024-10-10\",\r\n    \"project_id\":2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create task",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"cleaning\",\r\n    \"description\":\"you can clean \",\r\n    \"status\":\"جديد\",\r\n    \"priority\":\"عالي\",\r\n    \"due_date\":\"2024-10-10\",\r\n    \"project_id\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:03:23 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:03:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"cleaning\",\n    \"description\": \"you can clean\",\n    \"status\": \"جديد\",\n    \"priority\": \"عالي\",\n    \"due_date\": \"2024-10-10\",\n    \"project_id\": 2,\n    \"updated_at\": \"2024-09-16T13:03:23.000000Z\",\n    \"created_at\": \"2024-09-16T13:03:23.000000Z\",\n    \"id\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "view task",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "view task",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tasks/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tasks",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:05:20 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:05:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"title\": \"altering\",\n    \"description\": \"you can alter\",\n    \"status\": \"جديد\",\n    \"priority\": \"عالي\",\n    \"due_date\": \"2024-10-10\",\n    \"project_id\": 2,\n    \"created_at\": \"2024-09-16T13:02:53.000000Z\",\n    \"updated_at\": \"2024-09-16T13:02:53.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"altering task\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update task",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"altering task\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tasks/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tasks",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:07:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:07:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"title\": \"altering task\",\n    \"description\": \"you can alter\",\n    \"status\": \"جديد\",\n    \"priority\": \"عالي\",\n    \"due_date\": \"2024-10-10\",\n    \"project_id\": 2,\n    \"created_at\": \"2024-09-16T13:02:53.000000Z\",\n    \"updated_at\": \"2024-09-16T13:07:07.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete task",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"altering task\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/tasks/5",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete task",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"altering task\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tasks/5",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tasks",
+								"5"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:08:41 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:08:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "list_users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"hanen\",\n    \"email\":\"hanen11@gmail.com\",\n    \"password\":\"password\",\n    \"role\":\"developer\",\n    \"project_id\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "list_users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"hanen\",\n    \"email\":\"hanen11@gmail.com\",\n    \"password\":\"password\",\n    \"role\":\"developer\",\n    \"project_id\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:09:47 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:09:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"admin\",\n        \"email\": \"admin@gmail.com\",\n        \"email_verified_at\": null,\n        \"password\": \"$2y$10$XEZDVf/jg7frhpgfKh8zHeSN86lsDN0Q7iOw4L9oW/turp3gbMlzi\",\n        \"remember_token\": null,\n        \"created_at\": \"2024-09-15T17:34:01.000000Z\",\n        \"updated_at\": \"2024-09-15T17:34:01.000000Z\"\n    },\n    {\n        \"id\": 2,\n        \"name\": \"hanan\",\n        \"email\": \"hanen1@gmail.com\",\n        \"email_verified_at\": null,\n        \"password\": \"$2y$10$b5Cg75/zsI6ZDiKFI563KuvztN/REPlANkYtd1iLXS6PrSvlnYLie\",\n        \"remember_token\": null,\n        \"created_at\": \"2024-09-16T10:29:38.000000Z\",\n        \"updated_at\": \"2024-09-16T10:56:15.000000Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "create_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"samer\",\n    \"email\":\"samer@gmail.com\",\n    \"password\":\"password\",\n    \"role\":\"tester\",\n    \"project_id\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "create_user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"samer\",\n    \"email\":\"samer@gmail.com\",\n    \"password\":\"password\",\n    \"role\":\"tester\",\n    \"project_id\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:13:12 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:13:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"name\": \"samer\",\n    \"email\": \"samer@gmail.com\",\n    \"password\": \"$2y$10$3EaSsmXU45qZWYOcVYmlu.OSIp3b5Sjt7U4VpkJBHVrhv5hPpnyZm\",\n    \"updated_at\": \"2024-09-16T13:13:12.000000Z\",\n    \"created_at\": \"2024-09-16T13:13:12.000000Z\",\n    \"id\": 4\n}"
+				}
+			]
+		},
+		{
+			"name": "view_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"hanen\",\n    \"email\":\"hanen11@gmail.com\",\n    \"password\":\"password\",\n    \"role\":\"developer\",\n    \"project_id\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"1"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": [
+				{
+					"name": "view_user",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"hanen\",\n    \"email\":\"hanen11@gmail.com\",\n    \"password\":\"password\",\n    \"role\":\"developer\",\n    \"project_id\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:14:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:14:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"name\": \"admin\",\n    \"email\": \"admin@gmail.com\",\n    \"email_verified_at\": null,\n    \"password\": \"$2y$10$XEZDVf/jg7frhpgfKh8zHeSN86lsDN0Q7iOw4L9oW/turp3gbMlzi\",\n    \"remember_token\": null,\n    \"created_at\": \"2024-09-15T17:34:01.000000Z\",\n    \"updated_at\": \"2024-09-15T17:34:01.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful PUT request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n    \"email\":\"hanen13@gmail.com\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"2"
+					]
+				},
+				"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+			},
+			"response": [
+				{
+					"name": "update_user",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n    \"email\":\"hanen13@gmail.com\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:19:59 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:19:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"name\": \"hanan\",\n    \"email\": \"hanen13@gmail.com\",\n    \"email_verified_at\": null,\n    \"password\": \"$2y$10$b5Cg75/zsI6ZDiKFI563KuvztN/REPlANkYtd1iLXS6PrSvlnYLie\",\n    \"remember_token\": null,\n    \"created_at\": \"2024-09-16T10:29:38.000000Z\",\n    \"updated_at\": \"2024-09-16T13:19:59.000000Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Successful DELETE request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+							"});",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzI2NDkxNTMyLCJleHAiOjE3MjY0OTUxMzIsIm5iZiI6MTcyNjQ5MTUzMiwianRpIjoibTExUlp2R21OTHZtZjdmRiIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.dhFShgR8QbSKTnri5_SvjwqqAs0AlzQJ3qw1Nfol_nM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/4",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"4"
+					]
+				},
+				"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+			},
+			"response": [
+				{
+					"name": "Delete_user",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/users/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"users",
+								"4"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:21:08 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 16 Sep 2024 13:21:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.2.0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}
